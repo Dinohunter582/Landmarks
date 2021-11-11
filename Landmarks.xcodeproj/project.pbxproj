@@ -38,6 +38,7 @@
 		FB3656802721B4E40085F1BC /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB36567F2721B4E40085F1BC /* LandmarkRow.swift */; };
 		FB3656822721BD340085F1BC /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656812721BD340085F1BC /* LandmarkList.swift */; };
 		FB3656842721BF560085F1BC /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656832721BF560085F1BC /* LandmarkDetail.swift */; };
+		FBE17C99273D68B900873546 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE17C98273D68B900873546 /* ProfileEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		FB36567F2721B4E40085F1BC /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
 		FB3656812721BD340085F1BC /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
 		FB3656832721BF560085F1BC /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
+		FBE17C98273D68B900873546 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				FB08C172273C59CA00CFDD6C /* ProfileHost.swift */,
 				FB08C174273C5A6700CFDD6C /* ProfileSummary.swift */,
+				FBE17C98273D68B900873546 /* ProfileEditor.swift */,
 			);
 			path = Profiles;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 		FB36567B2721B3AD0085F1BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FBE17C9A273D6E2200873546 /* pageView */,
 				FB08C171273C59A300CFDD6C /* Profiles */,
 				FB08C168273C2FF200CFDD6C /* Categories */,
 				FB3656652720C45E0085F1BC /* ContentView.swift */,
@@ -218,6 +222,13 @@
 				FB08C16F273C58AF00CFDD6C /* Profile.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FBE17C9A273D6E2200873546 /* pageView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = pageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 				FB06ADCE2721FC7500851271 /* Hike.swift in Sources */,
 				FB06ADC72721F87D00851271 /* RotatedBadgeSymbol.swift in Sources */,
 				FB06ADC52721F50A00851271 /* BadgeSymbol.swift in Sources */,
+				FBE17C99273D68B900873546 /* ProfileEditor.swift in Sources */,
 				FB3656822721BD340085F1BC /* LandmarkList.swift in Sources */,
 				FB06ADD72721FDFA00851271 /* HikeView.swift in Sources */,
 				FB3656842721BF560085F1BC /* LandmarkDetail.swift in Sources */,
