@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct LandmarkDetail: View {
     @EnvironmentObject var modelData: ModelData
@@ -17,21 +18,33 @@ struct LandmarkDetail: View {
 
     var body: some View {
         ScrollView {
+            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
             MapView(coordinate: landmark.locationCoordinate2D)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
-
-            CircleImage(image: landmark.image)
-                .offset(y: -130)
-                .padding(.bottom, -130)
-
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(landmark.name)
-                        .font(.title)
-                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                
+                Button("Open in Maps") {
+                    let destination = MKMapItem(placemark: MKPlacemark(coordinate: landmark.locationCoordinate2D))
+                                       destination.name = landmark.name
+                                       destination.openInMaps()
                 }
+                
+            }
+            VStack(alignment: .leading, spacing: 20) {
+                HStack(spacing: 24) {
+                    CircleImage(image: landmark.image.resizable())
+                        .frame(width: 160, height: 160)
+                        .offset(y: -130)
+                        .padding(.bottom, -130)
 
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text(landmark.name)
+                                .font(.title)
+                            FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                                .buttonStyle(.plain)
+                }
+            }
                 HStack {
                     Text(landmark.park)
                     Spacer()
@@ -39,7 +52,7 @@ struct LandmarkDetail: View {
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-
+            }
                 Divider()
 
                 Text("About \(landmark.name)")
@@ -47,6 +60,8 @@ struct LandmarkDetail: View {
                 Text(landmark.description)
             }
             .padding()
+            .frame(maxWidth: 700)
+            .offset(y: 50)
         }
         .navigationTitle(landmark.name)
     }
